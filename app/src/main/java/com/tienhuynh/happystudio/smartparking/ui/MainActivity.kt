@@ -1,0 +1,17 @@
+package com.tienhuynh.happystudio.smartparking.ui
+
+import android.os.Bundle
+import com.tienhuynh.happystudio.smartparking.R
+import com.tienhuynh.happystudio.smartparking.ui.base.BaseActivity
+
+class MainActivity : BaseActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    override fun onBindViewModel() {
+        //No-op
+    }
+}
