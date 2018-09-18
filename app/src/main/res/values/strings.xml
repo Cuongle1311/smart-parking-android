@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">BaseMVVMProject</string>
+    <string name="app_name">Smart Parking</string>
+
+    <!--Splash Fragment-->
+    <string name="splashFragmentTvTitleAppName">Smart Parking</string>
+    <string name="splashFragmentTvProduct">Power by Happy Tech Studio</string>
 </resources>

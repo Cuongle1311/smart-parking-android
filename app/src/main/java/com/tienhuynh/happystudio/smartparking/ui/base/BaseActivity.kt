@@ -1,9 +1,15 @@
 package com.tienhuynh.happystudio.smartparking.ui.base
 
+import android.os.Build
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.Window
+import com.tienhuynh.happystudio.smartparking.R
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import org.jetbrains.anko.ctx
 
 /**
  * Created by TienHuynh3 on 30/05/2018.
@@ -16,6 +22,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        hideActionBar()
     }
 
     override fun onRestart() {
@@ -53,8 +60,20 @@ abstract class BaseActivity : AppCompatActivity() {
         ds.forEach { subscription.add(it) }
     }
 
+    private fun hideActionBar() {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(ctx, R.color.colorApp)
+            }
+            window.requestFeature(Window.FEATURE_ACTION_BAR)
+            supportActionBar?.hide()
+    }
+
     /**
      * This function is used to define subscription
      */
     abstract fun onBindViewModel()
+
+    abstract fun getContainer(): Int
+
+    abstract fun getCurrentFragment(): Fragment?
 }
