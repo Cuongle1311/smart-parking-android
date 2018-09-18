@@ -1,6 +1,8 @@
 package com.tienhuynh.happystudio.smartparking.ui.base
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.view.View
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import org.jetbrains.anko.support.v4.indeterminateProgressDialog
@@ -13,6 +15,11 @@ abstract class BaseFragment : Fragment() {
     private val subscription: CompositeDisposable = CompositeDisposable()
     private val progressDialog by lazy {
         indeterminateProgressDialog("msg", "title")
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setFontApp(view)
     }
 
     override fun onPause() {
@@ -46,4 +53,9 @@ abstract class BaseFragment : Fragment() {
      * This function is used to define subscription
      */
     abstract fun onBindViewModel()
+
+    /**
+     * This function is set font to text view
+     */
+    abstract fun setFontApp(view: View)
 }
