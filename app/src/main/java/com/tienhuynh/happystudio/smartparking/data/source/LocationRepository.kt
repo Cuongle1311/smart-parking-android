@@ -14,5 +14,4 @@ class LocationRepository : LocationDataSource {
         return Single.just(listOf(Location(0, 0), Location(0, 0),
                 Location(0, 0)))
     }
-
 }
