@@ -23,9 +23,7 @@ class SplashActivity : BaseActivity() {
 
     override fun getCurrentFragment(): Fragment? = getCurrentFragment(getContainer())
 
-    override fun onBindViewModel() {
-
-    }
+    override fun onBindViewModel() {}
 
     private fun openSplashFragment() {
         replaceFragment(R.id.splashContainer, SplashFragment.newInstance(), false)
