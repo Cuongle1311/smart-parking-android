@@ -65,6 +65,6 @@ class SplashFragment : BaseFragment() {
     }
 
     private fun handleGetLocationError(throwable: Throwable) {
-
+// TODO handle error later
     }
 }
